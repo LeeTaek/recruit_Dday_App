@@ -13,6 +13,8 @@ extension Color {
     static let day1 = Color(hex: "FF8080")
     static let day2 = Color(hex: "FFF7BC")
     static let day = Color(hex: "C0EDA6")
+    static let background = Color(hex: "FEFBE7")
+    static let navigationItem = Color(hex: "A0BCC2")
     
     init(hex: String) {
         let scanner = Scanner(string: hex)      //문자열 파서 역할하는 클래스

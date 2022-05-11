@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7445C661282B9957005A85AF /* recruitLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C660282B9957005A85AF /* recruitLink.swift */; };
 		74CE3E9A282B6B6600B0FF54 /* D_dayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3E99282B6B6600B0FF54 /* D_dayApp.swift */; };
 		74CE3E9C282B6B6600B0FF54 /* Dday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3E9B282B6B6600B0FF54 /* Dday.swift */; };
 		74CE3E9E282B6B6700B0FF54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CE3E9D282B6B6700B0FF54 /* Assets.xcassets */; };
@@ -15,9 +16,12 @@
 		74CE3EAD282B6C2200B0FF54 /* Recruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3EAC282B6C2200B0FF54 /* Recruit.swift */; };
 		74CE3EAF282B737800B0FF54 /* AddRecruitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3EAE282B737800B0FF54 /* AddRecruitInfo.swift */; };
 		74CE3EB1282B813700B0FF54 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3EB0282B813700B0FF54 /* ColorExtension.swift */; };
+		74CE3EB4282B84B100B0FF54 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 74CE3EB3282B84B100B0FF54 /* RealmSwift */; };
+		74CE3EB8282B86A000B0FF54 /* RecruitRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3EB7282B86A000B0FF54 /* RecruitRealmManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7445C660282B9957005A85AF /* recruitLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recruitLink.swift; sourceTree = "<group>"; };
 		74CE3E96282B6B6600B0FF54 /* D-day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D-day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74CE3E99282B6B6600B0FF54 /* D_dayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_dayApp.swift; sourceTree = "<group>"; };
 		74CE3E9B282B6B6600B0FF54 /* Dday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dday.swift; sourceTree = "<group>"; };
@@ -27,6 +31,7 @@
 		74CE3EAC282B6C2200B0FF54 /* Recruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruit.swift; sourceTree = "<group>"; };
 		74CE3EAE282B737800B0FF54 /* AddRecruitInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecruitInfo.swift; sourceTree = "<group>"; };
 		74CE3EB0282B813700B0FF54 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		74CE3EB7282B86A000B0FF54 /* RecruitRealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitRealmManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74CE3EB4282B84B100B0FF54 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +90,7 @@
 				74CE3E9B282B6B6600B0FF54 /* Dday.swift */,
 				74CE3EA9282B6BDF00B0FF54 /* DdayRow.swift */,
 				74CE3EAE282B737800B0FF54 /* AddRecruitInfo.swift */,
+				7445C660282B9957005A85AF /* recruitLink.swift */,
 			);
 			path = "D-day";
 			sourceTree = "<group>";
@@ -99,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				74CE3EAC282B6C2200B0FF54 /* Recruit.swift */,
+				74CE3EB7282B86A000B0FF54 /* RecruitRealmManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +127,9 @@
 			dependencies = (
 			);
 			name = "D-day";
+			packageProductDependencies = (
+				74CE3EB3282B84B100B0FF54 /* RealmSwift */,
+			);
 			productName = "D-day";
 			productReference = 74CE3E96282B6B6600B0FF54 /* D-day.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +158,9 @@
 				Base,
 			);
 			mainGroup = 74CE3E8D282B6B6600B0FF54;
+			packageReferences = (
+				74CE3EB2282B84B100B0FF54 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 74CE3E97282B6B6600B0FF54 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -173,6 +187,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7445C661282B9957005A85AF /* recruitLink.swift in Sources */,
+				74CE3EB8282B86A000B0FF54 /* RecruitRealmManager.swift in Sources */,
 				74CE3EAF282B737800B0FF54 /* AddRecruitInfo.swift in Sources */,
 				74CE3EAA282B6BDF00B0FF54 /* DdayRow.swift in Sources */,
 				74CE3EAD282B6C2200B0FF54 /* Recruit.swift in Sources */,
@@ -379,6 +395,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		74CE3EB2282B84B100B0FF54 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		74CE3EB3282B84B100B0FF54 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74CE3EB2282B84B100B0FF54 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 74CE3E8E282B6B6600B0FF54 /* Project object */;
 }

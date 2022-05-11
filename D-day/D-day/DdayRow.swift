@@ -17,6 +17,7 @@ struct DdayRow: View {
                     .font(.title2)
                     .fontWeight(.semibold)
                     .frame(width: 200, alignment: .leading)
+                    .padding(.top, 25)
                 
                 Spacer()
                 
@@ -24,9 +25,9 @@ struct DdayRow: View {
                     Text("\(recuritInfo.date)")
                     Text("\(recuritInfo.day)")
                 }.frame(width: 200 ,alignment: .leading)
-                
-                
-            }.padding()
+                .padding(.bottom, 25)
+
+            }.padding(.leading, 20)
             
             Spacer()
             
@@ -34,17 +35,18 @@ struct DdayRow: View {
                 Text("D - \(recuritInfo.countDday)🔥")
                     .fontWeight(.medium)
                     .frame(width: 100, alignment: .trailing)
-                
+                    .padding(.top, 25)
+
                 Spacer()
                 
-                Text("apply 버튼 자리")
-                    .frame(width: 120, alignment: .trailing)
-            }.padding()
+                Text("apply")
+                    .frame(width: 100, alignment: .trailing)
+                    .padding(.bottom, 25)
+
+            }.padding(.trailing, 20)
             
-        }.frame(height: 100)
-            .background(self.color)
+        }.background(self.color)
             .cornerRadius(10)
-            .padding()
     }
     
     
@@ -66,8 +68,6 @@ struct DdayRow: View {
         
     }
 
-    
-    
 }
 
 struct DdayRow_Previews: PreviewProvider {

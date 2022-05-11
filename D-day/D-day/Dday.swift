@@ -6,24 +6,51 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct Dday: View {
+    @ObservedResults(RecruitRealmManager.self) var recruitInfo
+    
     var body: some View {
         NavigationView {
             VStack {
-                DdayRow(recuritInfo: Recruit())
+        
+                recruitList
             }.toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: AddRecruitInfo()) {
-                        Image(systemName: "plus")
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: AddRecruitInfo()) {
+                            Image(systemName: "plus")
+                                .foregroundColor(.navigationItem)
+                        }
                     }
-                    
                 }
-            }.navigationBarTitle("Recruit Info❗️", displayMode: .inline)
-            
+                .navigationTitle("Recruit Info❗️")
+                .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
+    
+    var recruitList: some View {
+        List(recruitInfo) { recruit in
+            HStack {
+                DdayRow(recuritInfo: recruit.getRecruit())
+                
+                NavigationLink(destination: recruitLink()) {
+                    EmptyView()
+                }.frame(width: 0)
+                    .opacity(0)
+            }
+//            .listRowBackground(Color.clear)
+        }
+        .listStyle(.plain)
+//        .background(Color.background)
+    }
+    
+    
 }
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

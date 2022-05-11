@@ -12,6 +12,7 @@ struct AddRecruitInfo: View {
     @State var name: String = ""
     @State var dday: Date = Date()
     @State var link: String = ""
+    var updateInfo = RecruitRealmManager()
     
     
     var body: some View {
@@ -27,8 +28,14 @@ struct AddRecruitInfo: View {
                 
                 
             }
-            .navigationBarTitle("Add memo📌", displayMode: .inline)
+            .listRowBackground(Color.clear)
+            .listStyle(.plain)
+            .background(Color.background)
+            .navigationTitle("Add memo📌")
+            .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+
     }
     
     // 기업 이름
@@ -54,7 +61,7 @@ struct AddRecruitInfo: View {
     // 날짜
     var inputDate: some View {
         Section {
-            DatePicker(selection: $dday, in: Date()..., displayedComponents: .date) {
+            DatePicker(selection: $dday, in: Date()...) {
                 Text("enter a deadline.")
                     .foregroundColor(.gray)
             }.datePickerStyle(GraphicalDatePickerStyle())
@@ -85,15 +92,29 @@ struct AddRecruitInfo: View {
     
     // 추가 버튼
     var addButton: some View {
-        Button(action: {}) {
+        Button(action: {
+            self.updateInfo.addSchedule(recruit: recruitInfo)
+        }) {
             Text("Add recruit Info")
                 .fontWeight(.bold)
                 .foregroundColor(.cyan)
                 .frame(width: 350)
         }
-        
     }
 
+    
+    var recruitInfo: Recruit {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM.dd kk시" // Date 포맷 타입 지정
+        let date = dateFormatter.string(from: self.dday)
+        
+        dateFormatter.dateFormat = "E요일"
+        let day = dateFormatter.string(from: self.dday)
+        let countDay = Int(self.dday.timeIntervalSinceNow / 86400)
+        
+        return Recruit(name: self.name, date: date, link: self.link, day: day, Dday: countDay)
+    }
+  
     
 }
 
