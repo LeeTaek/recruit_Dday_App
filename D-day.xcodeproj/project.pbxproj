@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7445C661282B9957005A85AF /* recruitLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C660282B9957005A85AF /* recruitLink.swift */; };
+		7445C663282BB375005A85AF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C662282BB375005A85AF /* WebView.swift */; };
+		7445C665282BB459005A85AF /* mainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C664282BB459005A85AF /* mainTabView.swift */; };
+		7445C667282BB522005A85AF /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C666282BB522005A85AF /* TodoList.swift */; };
 		74CE3E9A282B6B6600B0FF54 /* D_dayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3E99282B6B6600B0FF54 /* D_dayApp.swift */; };
 		74CE3E9C282B6B6600B0FF54 /* Dday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3E9B282B6B6600B0FF54 /* Dday.swift */; };
 		74CE3E9E282B6B6700B0FF54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CE3E9D282B6B6700B0FF54 /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		7445C660282B9957005A85AF /* recruitLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recruitLink.swift; sourceTree = "<group>"; };
+		7445C662282BB375005A85AF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		7445C664282BB459005A85AF /* mainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabView.swift; sourceTree = "<group>"; };
+		7445C666282BB522005A85AF /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		74CE3E96282B6B6600B0FF54 /* D-day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D-day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74CE3E99282B6B6600B0FF54 /* D_dayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_dayApp.swift; sourceTree = "<group>"; };
 		74CE3E9B282B6B6600B0FF54 /* Dday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dday.swift; sourceTree = "<group>"; };
@@ -68,10 +74,11 @@
 				74CE3EAB282B6C0B00B0FF54 /* Model */,
 				74CE3EA8282B6B9600B0FF54 /* TodoList */,
 				74CE3EA7282B6B8900B0FF54 /* D-day */,
-				74CE3E99282B6B6600B0FF54 /* D_dayApp.swift */,
 				74CE3E9D282B6B6700B0FF54 /* Assets.xcassets */,
 				74CE3E9F282B6B6700B0FF54 /* Preview Content */,
 				74CE3EB0282B813700B0FF54 /* ColorExtension.swift */,
+				7445C664282BB459005A85AF /* mainTabView.swift */,
+				74CE3E99282B6B6600B0FF54 /* D_dayApp.swift */,
 			);
 			path = "D-day";
 			sourceTree = "<group>";
@@ -98,6 +105,7 @@
 		74CE3EA8282B6B9600B0FF54 /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
+				7445C666282BB522005A85AF /* TodoList.swift */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -107,6 +115,7 @@
 			children = (
 				74CE3EAC282B6C2200B0FF54 /* Recruit.swift */,
 				74CE3EB7282B86A000B0FF54 /* RecruitRealmManager.swift */,
+				7445C662282BB375005A85AF /* WebView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,7 +196,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7445C665282BB459005A85AF /* mainTabView.swift in Sources */,
+				7445C667282BB522005A85AF /* TodoList.swift in Sources */,
 				7445C661282B9957005A85AF /* recruitLink.swift in Sources */,
+				7445C663282BB375005A85AF /* WebView.swift in Sources */,
 				74CE3EB8282B86A000B0FF54 /* RecruitRealmManager.swift in Sources */,
 				74CE3EAF282B737800B0FF54 /* AddRecruitInfo.swift in Sources */,
 				74CE3EAA282B6BDF00B0FF54 /* DdayRow.swift in Sources */,

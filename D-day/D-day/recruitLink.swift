@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct recruitLink: View {
+    
+    var link: String
+    
     var body: some View {
-        Text("Hello, World!")
+        Webview(urlToLoad: link)
+            .navigationTitle("WebSite 📃")
     }
 }
 
 struct recruitLink_Previews: PreviewProvider {
     static var previews: some View {
-        recruitLink()
+        recruitLink(link: "https://www.instagram.com/lee_taek/")
     }
 }

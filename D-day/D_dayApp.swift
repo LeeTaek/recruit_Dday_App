@@ -11,7 +11,7 @@ import SwiftUI
 struct D_dayApp: App {
     var body: some Scene {
         WindowGroup {
-            Dday()
+            mainTabView()
         }
     }
 }

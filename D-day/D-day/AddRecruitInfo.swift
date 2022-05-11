@@ -14,6 +14,9 @@ struct AddRecruitInfo: View {
     @State var link: String = ""
     var updateInfo = RecruitRealmManager()
     
+    init() {
+            UITableView.appearance().backgroundColor = .clear
+    }
     
     var body: some View {
         NavigationView {
@@ -28,8 +31,8 @@ struct AddRecruitInfo: View {
                 
                 
             }
-            .listRowBackground(Color.clear)
-            .listStyle(.plain)
+//            .listRowBackground(Color.clear)
+//            .listStyle(.plain)
             .background(Color.background)
             .navigationTitle("Add memo📌")
             .navigationBarTitleDisplayMode(.inline)
@@ -65,7 +68,7 @@ struct AddRecruitInfo: View {
                 Text("enter a deadline.")
                     .foregroundColor(.gray)
             }.datePickerStyle(GraphicalDatePickerStyle())
-                .colorMultiply(.brown)
+                .accentColor(.navigationItem)
         } header: {
             Text("Date📆")
         }

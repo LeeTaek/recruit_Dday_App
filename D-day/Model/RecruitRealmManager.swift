@@ -16,7 +16,7 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
     @Persisted var Dday: Int
     @Persisted var apply: Bool = false
     
-    
+
     convenience init(recruit: Recruit) {
         self.init()
         self.date = recruit.date
@@ -57,7 +57,7 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
     func getRecruit() -> Recruit {
         Recruit(name: self.name, date: self.date, link: self.link, day: self.day, Dday: self.Dday)
     }
-    
+
     
 }
 
