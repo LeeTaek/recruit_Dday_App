@@ -16,12 +16,8 @@ struct AddRecruitInfo: View {
     @State var link: String = ""
     var updateInfo = RecruitRealmManager()
     
-//    init() {
-//        UITableView.appearance().backgroundColor = .clear
-//    }
     
     var body: some View {
-    
         Form {
             inputName
             
@@ -34,10 +30,11 @@ struct AddRecruitInfo: View {
             .navigationTitle("Add memo📌")
             .background(Color.background)
             .navigationBarTitleDisplayMode(.inline)
+        
     }
     
     
-    // 기업 이름
+    //MARK: - 기업 이름 입력란
     var inputName: some View {
         Section {
             HStack {
@@ -61,7 +58,7 @@ struct AddRecruitInfo: View {
     
     
     
-    // 날짜
+    //MARK: - 날짜 입력란
     var inputDate: some View {
         Section {
             DatePicker(selection: $dday, in: Date()...) {
@@ -78,7 +75,7 @@ struct AddRecruitInfo: View {
     
     
     
-    // 채용 링크
+    //MARK: - 채용 링크 입력란
     var inputLink: some View {
         Section {
             HStack {
@@ -99,7 +96,7 @@ struct AddRecruitInfo: View {
         }
     }
     
-    // 추가 버튼
+    //MARK: - Add버튼
     var addButton: some View {
         Button(action: {
             self.updateInfo.addSchedule(recruit: recruitInfo)
@@ -113,9 +110,8 @@ struct AddRecruitInfo: View {
     }
 
     
-    
+    //MARK: - 받은 정보로 Recrui 타입으로 변환
     var recruitInfo: Recruit {
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.dd kk시" // Date 포맷 타입 지정
         let date = dateFormatter.string(from: self.dday)

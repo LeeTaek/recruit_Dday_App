@@ -55,7 +55,7 @@ struct DdayRow: View {
     }
     
     
-    
+    //MARK: - D-day에 따른 배경 색
     var color: Color {
         switch recuritInfo.countDday {
         case 0 :

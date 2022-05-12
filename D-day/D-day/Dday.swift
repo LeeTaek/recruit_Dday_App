@@ -10,33 +10,19 @@ import RealmSwift
 
 struct Dday: View {
     @ObservedResults(RecruitRealmManager.self) var recruitInfo
-    @State var goToAddMemo = false
 
     init() {
             UITableView.appearance().backgroundColor = .clear
     }
     
-    
-    
     var body: some View {
-        NavigationView {
-            VStack {
-                recruitList
-            }.toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: AddRecruitInfo(goToDday: $goToAddMemo), isActive: $goToAddMemo) {
-                            Image(systemName: "plus")
-                                .foregroundColor(.navigationItem)
-                        }
-                    }
-                }
-                .navigationTitle("Recruit❗️")
-                .navigationBarTitleDisplayMode(.inline)
-        }
-        .navigationViewStyle(.columns)
+        recruitList
+
     }
     
     
+    
+    //MARK: - 메모 리스트
     var recruitList: some View {
         List(recruitInfo.sorted(byKeyPath: "Dday")) { recruit in
             HStack {
@@ -47,10 +33,26 @@ struct Dday: View {
                 }.frame(width: 0)
                     .opacity(0)
             }
+            .contextMenu {      // 컨텍스트 메뉴
+                HStack{
+                    Button(action: {
+                       print("edit 기능 ")
+                    }) {
+                        Text("Edit recruit info 🔖")
+                    }}
+                
+                    Button(action: {
+                        recruit.removeSchedule(recruit: recruit.getRecruit())
+                    }) {
+                        Text("Remove Memo 🗑")
+                    }}
             .listRowBackground(Color.clear)
         }
         .listStyle(.plain)
         .background(Color.background)
+        .navigationTitle("Recruit❗️")
+        .navigationBarTitleDisplayMode(.inline)
+
     }
 }
 

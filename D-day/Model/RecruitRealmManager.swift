@@ -27,7 +27,7 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
     }
     
     
-    // 추가
+    //MARK: - 추가
     func addSchedule(recruit: Recruit) {
         print("경로 : \(Realm.Configuration.defaultConfiguration.fileURL!)")
 
@@ -41,7 +41,8 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
     }
     
     
-    // 삭제
+    
+    //MARK: - 삭제
     func removeSchedule(recruit: Recruit) {
         let realm = try! Realm()
         
@@ -54,6 +55,7 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
     }
     
     
+    //MARK: - 현재값 반환
     func getRecruit() -> Recruit {
         Recruit(name: self.name, date: self.date!, link: self.link, day: self.day!, Dday: self.Dday)
     }
