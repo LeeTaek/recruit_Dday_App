@@ -1,15 +1,16 @@
 //
-//  DdayRow.swift
+//  removedRow.swift
 //  D-day
 //
-//  Created by 이택성 on 2022/05/11.
+//  Created by 이택성 on 2022/05/12.
 //
+
 
 import SwiftUI
 import RealmSwift
 
-struct DdayRow: View {
-    @ObservedRealmObject var recruit: RecruitRealmManager
+struct removeRow: View {
+    @ObservedRealmObject var recruit: RemovedViewModel
 
     var body: some View {
         HStack {
@@ -44,7 +45,12 @@ struct DdayRow: View {
 
                 Spacer()
             
-                apply
+                Text("삭제 - \(printDate(recruit.removedDay))")
+                    .foregroundColor(.textFiledColor)
+                    .fontWeight(.medium)
+                    .frame(width: 130, alignment: .trailing)
+                    .padding(.bottom, 25)
+
                 
 
             }.padding(.trailing, 20)
@@ -53,6 +59,7 @@ struct DdayRow: View {
         .background(self.color)
             .cornerRadius(10)
     }
+    
     
     
     //MARK: - D-day에 따른 배경 색
@@ -73,23 +80,20 @@ struct DdayRow: View {
     }
     
     
-    
-    
-    var apply: some View {
+    //MARK: - 날짜 변환
+    func printDate(_ date: Date ) -> String {
+        let format = DateFormatter()
+        format.dateFormat = "MM월 dd일"
         
-        Text("Apply : \(recruit.apply.description)")
-             .foregroundColor(.textFiledColor)
-             .frame(width: 100, alignment: .trailing)
-             .padding(.bottom, 25)
-             .onTapGesture {
-                 recruit.toggleApply(site: recruit.getRecruit().link)
-             }
-        
+        return format.string(from: date)
     }
+    
+    
 }
 
-//struct DdayRow_Previews: PreviewProvider {
+
+//struct removedRow_Previews: PreviewProvider {
 //    static var previews: some View {
-//        DdayRow(recruit: <#RecruitRealmManager#>, recuritInfo: Recruit(), applyMessage: false)
+//        removedRow()
 //    }
 //}

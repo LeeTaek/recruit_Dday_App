@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		742D6566282CB334000C81D7 /* ApplyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D6565282CB334000C81D7 /* ApplyButton.swift */; };
+		742D6568282D05E6000C81D7 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D6567282D05E6000C81D7 /* Apply.swift */; };
+		742D656A282D0714000C81D7 /* RemovedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D6569282D0714000C81D7 /* RemovedViewModel.swift */; };
+		742D656C282D116D000C81D7 /* Removed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D656B282D116D000C81D7 /* Removed.swift */; };
+		742D656E282D12F8000C81D7 /* removedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D656D282D12F8000C81D7 /* removedRow.swift */; };
 		7445C661282B9957005A85AF /* recruitLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C660282B9957005A85AF /* recruitLink.swift */; };
 		7445C663282BB375005A85AF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C662282BB375005A85AF /* WebView.swift */; };
 		7445C665282BB459005A85AF /* mainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C664282BB459005A85AF /* mainTabView.swift */; };
@@ -25,7 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		742D6565282CB334000C81D7 /* ApplyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyButton.swift; sourceTree = "<group>"; };
+		742D6567282D05E6000C81D7 /* Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
+		742D6569282D0714000C81D7 /* RemovedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemovedViewModel.swift; sourceTree = "<group>"; };
+		742D656B282D116D000C81D7 /* Removed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Removed.swift; sourceTree = "<group>"; };
+		742D656D282D12F8000C81D7 /* removedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = removedRow.swift; sourceTree = "<group>"; };
 		7445C660282B9957005A85AF /* recruitLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recruitLink.swift; sourceTree = "<group>"; };
 		7445C662282BB375005A85AF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		7445C664282BB459005A85AF /* mainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabView.swift; sourceTree = "<group>"; };
@@ -100,7 +106,9 @@
 				74CE3EA9282B6BDF00B0FF54 /* DdayRow.swift */,
 				74CE3EAE282B737800B0FF54 /* AddRecruitInfo.swift */,
 				7445C660282B9957005A85AF /* recruitLink.swift */,
-				742D6565282CB334000C81D7 /* ApplyButton.swift */,
+				742D6567282D05E6000C81D7 /* Apply.swift */,
+				742D656B282D116D000C81D7 /* Removed.swift */,
+				742D656D282D12F8000C81D7 /* removedRow.swift */,
 			);
 			path = "D-day";
 			sourceTree = "<group>";
@@ -118,6 +126,7 @@
 			children = (
 				74CE3EAC282B6C2200B0FF54 /* Recruit.swift */,
 				74CE3EB7282B86A000B0FF54 /* RecruitRealmManager.swift */,
+				742D6569282D0714000C81D7 /* RemovedViewModel.swift */,
 				7445C662282BB375005A85AF /* WebView.swift */,
 			);
 			path = Model;
@@ -201,13 +210,16 @@
 			files = (
 				7445C665282BB459005A85AF /* mainTabView.swift in Sources */,
 				7445C667282BB522005A85AF /* TodoList.swift in Sources */,
-				742D6566282CB334000C81D7 /* ApplyButton.swift in Sources */,
 				7445C661282B9957005A85AF /* recruitLink.swift in Sources */,
 				7445C663282BB375005A85AF /* WebView.swift in Sources */,
 				74CE3EB8282B86A000B0FF54 /* RecruitRealmManager.swift in Sources */,
+				742D656E282D12F8000C81D7 /* removedRow.swift in Sources */,
 				74CE3EAF282B737800B0FF54 /* AddRecruitInfo.swift in Sources */,
+				742D656A282D0714000C81D7 /* RemovedViewModel.swift in Sources */,
 				74CE3EAA282B6BDF00B0FF54 /* DdayRow.swift in Sources */,
 				74CE3EAD282B6C2200B0FF54 /* Recruit.swift in Sources */,
+				742D6568282D05E6000C81D7 /* Apply.swift in Sources */,
+				742D656C282D116D000C81D7 /* Removed.swift in Sources */,
 				74CE3EB1282B813700B0FF54 /* ColorExtension.swift in Sources */,
 				74CE3E9C282B6B6600B0FF54 /* Dday.swift in Sources */,
 				74CE3E9A282B6B6600B0FF54 /* D_dayApp.swift in Sources */,

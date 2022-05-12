@@ -38,10 +38,24 @@ struct mainTabView: View {
             .foregroundColor(Color.tabColor)
             .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: AddRecruitInfo(goToDday: $goToAddMemo), isActive: $goToAddMemo) {
-                            Image(systemName: "plus")
-                                .foregroundColor(.navigationItem)
+                        HStack {
+                            NavigationLink(destination: Apply()) {
+                                Image(systemName: "text.badge.plus")
+                                    .foregroundColor(.navigationItem)
+                            }
+                            
+                            NavigationLink(destination: Removed()) {
+                                Image(systemName: "trash")
+                                    .foregroundColor(.navigationItem)
+                            }
+                            
+                            NavigationLink(destination: AddRecruitInfo(goToDday: $goToAddMemo), isActive: $goToAddMemo) {
+                                Image(systemName: "plus")
+                                    .foregroundColor(.navigationItem)
+                            }
                         }
+                        
+                       
                     }
                 
                 

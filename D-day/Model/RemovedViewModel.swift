@@ -1,22 +1,24 @@
 //
-//  RecruitRealmManager.swift
+//  appliedViewModel.swift
 //  D-day
 //
-//  Created by 이택성 on 2022/05/11.
+//  Created by 이택성 on 2022/05/12.
 //
 
 import Foundation
 import RealmSwift
 
-class RecruitRealmManager: Object, ObjectKeyIdentifiable {
+class RemovedViewModel: Object, ObjectKeyIdentifiable {
     @Persisted var date: String?
     @Persisted var name: String
     @Persisted var day: String?
     @Persisted (primaryKey: true) var link: String
     @Persisted var Dday: Int?
     @Persisted var apply: Bool = false
+    @Persisted var removedDay: Date = Date.now
     
-
+    
+    
     convenience init(recruit: Recruit) {
         self.init()
         self.overDeadline()
@@ -34,8 +36,7 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
         print("경로 : \(Realm.Configuration.defaultConfiguration.fileURL!)")
 
         let realm = try! Realm()
-        
-        let recruitInfo = RecruitRealmManager(recruit: recruit)
+        let recruitInfo = RemovedViewModel(recruit: recruit)
         
         do {
             try realm.write{
@@ -44,8 +45,6 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
         } catch {
             print("\(error.localizedDescription)")
         }
-       
-    
     }
     
     
@@ -53,17 +52,12 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
     //MARK: - 삭제
     func removeSchedule(recruit: Recruit) {
         let realm = try! Realm()
-        let removeModel = RemovedViewModel()
-        let remove = realm.object(ofType: RecruitRealmManager.self, forPrimaryKey: recruit.link)!
         
-        removeModel.addSchedule(recruit: remove.getRecruit())
-
-        
+        let remove = realm.object(ofType: RemovedViewModel.self, forPrimaryKey: recruit.link)!
+ 
         try! realm.write({
             realm.delete(remove)
-                    })
-        
-        
+        })
     }
     
     
@@ -73,33 +67,30 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
     }
     
     
-    //MARK: - 지원버튼
-    func toggleApply(site: String) {
+    //MARK: - 복구
+    func recorvery(recruit: Recruit ) {
         let realm = try! Realm()
-        
-        let update = realm.object(ofType: RecruitRealmManager.self, forPrimaryKey: site)!
-    
-        try! realm.write{
-            update.apply.toggle()
-        }
-        
-    }
+        let rec = RecruitRealmManager()
+        let recover = realm.object(ofType: RemovedViewModel.self, forPrimaryKey: recruit.link)!
+        rec.addSchedule(recruit: recover.getRecruit())
 
+        try! realm.write({
+            realm.delete(recover)
+        })
+    }
     
     
     
-    //MARK: - 채용기간 지난건 제거
+    //MARK: - 지워진지 3일 이상 된것들 제거
     func overDeadline() {
         let realm = try! Realm()
         
-        let over = realm.objects(RecruitRealmManager.self).filter { $0.Dday! < 0 }
+        let over = realm.objects(RemovedViewModel.self).filter { $0.removedDay.timeIntervalSince(Date.now) > 259200 }
         
         over.forEach {
-            print("\($0.getRecruit().name)")
             removeSchedule(recruit: $0.getRecruit())
         }
     }
-    
     
 }
 
