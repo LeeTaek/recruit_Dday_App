@@ -10,10 +10,11 @@ import RealmSwift
 
 struct Dday: View {
     @ObservedResults(RecruitRealmManager.self) var recruitInfo
-
+    
     init() {
             UITableView.appearance().backgroundColor = .clear
     }
+    
     
     var body: some View {
         recruitList
@@ -21,17 +22,18 @@ struct Dday: View {
     }
     
     
-    
     //MARK: - 메모 리스트
     var recruitList: some View {
         List(recruitInfo.sorted(byKeyPath: "Dday")) { recruit in
             HStack {
-                DdayRow(recuritInfo: recruit.getRecruit())
+                DdayRow(recruit: recruit)
                 
-                NavigationLink(destination: recruitLink(link: recruit.getRecruit().link)) {
+                NavigationLink(destination: recruitLink(link: recruit.getRecruit().link )) {
                     EmptyView()
                 }.frame(width: 0)
                     .opacity(0)
+                
+
             }
             .contextMenu {      // 컨텍스트 메뉴
                 HStack{

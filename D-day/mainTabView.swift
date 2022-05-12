@@ -17,7 +17,6 @@ struct mainTabView: View {
 
     var body: some View {
         NavigationView {
-
             TabView(selection: $selectedTab) {
                 Group{
                     Dday()
@@ -35,7 +34,7 @@ struct mainTabView: View {
                         }
                     
                 }
-            } .listRowBackground(Color.clear)
+            }
             .foregroundColor(Color.tabColor)
             .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -44,9 +43,13 @@ struct mainTabView: View {
                                 .foregroundColor(.navigationItem)
                         }
                     }
+                
+                
+                
+                
                 }
-    }
-    .navigationViewStyle(.columns)
+            }
+        .navigationViewStyle(.stack)
 
         
     }

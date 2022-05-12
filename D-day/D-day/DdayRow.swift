@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct DdayRow: View {
-    var recuritInfo = Recruit()
-    
+    @ObservedRealmObject var recruit : RecruitRealmManager
+
     var body: some View {
         HStack {
             VStack{
-                Text("\(recuritInfo.name)")
+                Text("\(recruit.getRecruit().name)")
                     .foregroundColor(.textFiledColor)
                     .font(.title2)
                     .fontWeight(.semibold)
@@ -23,9 +24,9 @@ struct DdayRow: View {
                 Spacer()
                 
                 HStack{
-                    Text("\(recuritInfo.date)")
+                    Text("\(recruit.getRecruit().date!)")
                     
-                    Text("\(recuritInfo.day)")
+                    Text("\(recruit.getRecruit().day!)")
                 }                    .foregroundColor(.textFiledColor)
                 .frame(width: 200 ,alignment: .leading)
                 .padding(.bottom, 25)
@@ -35,18 +36,16 @@ struct DdayRow: View {
             Spacer()
             
             VStack {
-                Text("D - \(recuritInfo.countDday)🔥")
+                Text("D - \(recruit.getRecruit().countDday)🔥")
                     .foregroundColor(.textFiledColor)
                     .fontWeight(.medium)
                     .frame(width: 100, alignment: .trailing)
                     .padding(.top, 25)
 
                 Spacer()
+            
+                apply
                 
-                Text("apply")
-                    .foregroundColor(.textFiledColor)
-                    .frame(width: 100, alignment: .trailing)
-                    .padding(.bottom, 25)
 
             }.padding(.trailing, 20)
             
@@ -57,7 +56,7 @@ struct DdayRow: View {
     
     //MARK: - D-day에 따른 배경 색
     var color: Color {
-        switch recuritInfo.countDday {
+        switch recruit.getRecruit().countDday {
         case 0 :
             return .day0
             
@@ -71,11 +70,30 @@ struct DdayRow: View {
             return .day
         }
     }
-
-}
-
-struct DdayRow_Previews: PreviewProvider {
-    static var previews: some View {
-        DdayRow(recuritInfo: Recruit())
+    
+    
+    
+    
+    var apply: some View {
+        
+        Text("Apply : \(recruit.apply.description)")
+             .foregroundColor(.textFiledColor)
+             .frame(width: 100, alignment: .trailing)
+             .padding(.bottom, 25)
+             .onTapGesture {
+                 recruit.toggleApply(site: recruit.getRecruit().link)
+                 
+             }
+        
     }
+    
+    
+    
+
 }
+
+//struct DdayRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DdayRow(recruit: <#RecruitRealmManager#>, recuritInfo: Recruit(), applyMessage: false)
+//    }
+//}

@@ -110,6 +110,7 @@ struct AddRecruitInfo: View {
     }
 
     
+    
     //MARK: - 받은 정보로 Recrui 타입으로 변환
     var recruitInfo: Recruit {
         let dateFormatter = DateFormatter()

@@ -8,19 +8,25 @@
 import SwiftUI
 
 struct ApplyButton: View {
+    
+    
     var body: some View {
         Circle()
-            .foregroundColor(.background.opacity(20))
+            .foregroundColor(.textFiledColor)
+            .frame(width: 150, height: 150)
             .overlay(innerCircle)
     }
-    
-    
+        
     var innerCircle: some View {
         GeometryReader {
             Circle()
-                .frame(width: $0.size.width * 0.9, height: $0.size.height * 0.9)
-                .foregroundColor(.white)
-            
+                .foregroundColor(.background)
+                .frame(width: $0.size.width * 0.9, height: $0.size.height * 0.90, alignment: .center)
+                .position(x: $0.size.width/2, y: $0.size.width/2)
+                .overlay(Image(systemName: "checkmark")
+                    .resizable()
+                    .frame(width: $0.size.width / 2, height: $0.size.height / 2, alignment: .center))
+                .foregroundColor(.textFiledColor)
         }
     }
 }

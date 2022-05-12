@@ -35,9 +35,15 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
         
         let recruitInfo = RecruitRealmManager(recruit: recruit)
         
-        try! realm.write{
-            realm.add(recruitInfo)
-        } 
+        do {
+            try realm.write{
+                realm.add(recruitInfo)
+            }
+        } catch {
+            print("\(error.localizedDescription)")
+        }
+       
+    
     }
     
     
@@ -58,6 +64,20 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
     //MARK: - 현재값 반환
     func getRecruit() -> Recruit {
         Recruit(name: self.name, date: self.date!, link: self.link, day: self.day!, Dday: self.Dday)
+    }
+    
+    
+    func toggleApply(site: String) {
+        let realm = try! Realm()
+        
+        let update = realm.object(ofType: RecruitRealmManager.self, forPrimaryKey: site)!
+        
+
+        
+        try! realm.write{
+            update.apply.toggle()
+        }
+        
     }
 
     

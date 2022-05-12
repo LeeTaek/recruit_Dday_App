@@ -7,8 +7,8 @@
 import Foundation
 
 struct Recruit {
-    let date: String
-    let day: String
+    let date: String?
+    let day: String?
     let name: String
     let link: String
     let countDday: Int
