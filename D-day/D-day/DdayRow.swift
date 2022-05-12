@@ -14,6 +14,7 @@ struct DdayRow: View {
         HStack {
             VStack{
                 Text("\(recuritInfo.name)")
+                    .foregroundColor(.textFiledColor)
                     .font(.title2)
                     .fontWeight(.semibold)
                     .frame(width: 200, alignment: .leading)
@@ -23,8 +24,10 @@ struct DdayRow: View {
                 
                 HStack{
                     Text("\(recuritInfo.date)")
+                    
                     Text("\(recuritInfo.day)")
-                }.frame(width: 200 ,alignment: .leading)
+                }                    .foregroundColor(.textFiledColor)
+                .frame(width: 200 ,alignment: .leading)
                 .padding(.bottom, 25)
 
             }.padding(.leading, 20)
@@ -33,6 +36,7 @@ struct DdayRow: View {
             
             VStack {
                 Text("D - \(recuritInfo.countDday)🔥")
+                    .foregroundColor(.textFiledColor)
                     .fontWeight(.medium)
                     .frame(width: 100, alignment: .trailing)
                     .padding(.top, 25)
@@ -40,6 +44,7 @@ struct DdayRow: View {
                 Spacer()
                 
                 Text("apply")
+                    .foregroundColor(.textFiledColor)
                     .frame(width: 100, alignment: .trailing)
                     .padding(.bottom, 25)
 
@@ -65,7 +70,6 @@ struct DdayRow: View {
         default :
             return .day
         }
-        
     }
 
 }

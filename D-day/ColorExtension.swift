@@ -16,6 +16,7 @@ extension Color {
     static let background = Color(hex: "FEFBE7")
     static let navigationItem = Color(hex: "A0BCC2")
     static let tabColor = Color(hex: "F9EBC8")
+    static let textFiledColor = Color(hex: "22577E")
     
     init(hex: String) {
         let scanner = Scanner(string: hex)      //문자열 파서 역할하는 클래스

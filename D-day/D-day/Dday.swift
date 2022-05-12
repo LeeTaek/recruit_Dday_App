@@ -10,19 +10,21 @@ import RealmSwift
 
 struct Dday: View {
     @ObservedResults(RecruitRealmManager.self) var recruitInfo
-    
+    @State var goToAddMemo = false
+
     init() {
-            UITableView.appearance().backgroundColor = .clear // <-- here
+            UITableView.appearance().backgroundColor = .clear
     }
+    
+    
     
     var body: some View {
         NavigationView {
             VStack {
-        
                 recruitList
             }.toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: AddRecruitInfo()) {
+                        NavigationLink(destination: AddRecruitInfo(goToDday: $goToAddMemo), isActive: $goToAddMemo) {
                             Image(systemName: "plus")
                                 .foregroundColor(.navigationItem)
                         }
@@ -30,10 +32,10 @@ struct Dday: View {
                 }
                 .navigationTitle("Recruit❗️")
                 .navigationBarTitleDisplayMode(.inline)
-                
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(.columns)
     }
+    
     
     var recruitList: some View {
         List(recruitInfo.sorted(byKeyPath: "Dday")) { recruit in
@@ -50,8 +52,6 @@ struct Dday: View {
         .listStyle(.plain)
         .background(Color.background)
     }
-    
-    
 }
 
 

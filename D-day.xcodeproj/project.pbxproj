@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		742D6566282CB334000C81D7 /* ApplyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D6565282CB334000C81D7 /* ApplyButton.swift */; };
 		7445C661282B9957005A85AF /* recruitLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C660282B9957005A85AF /* recruitLink.swift */; };
 		7445C663282BB375005A85AF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C662282BB375005A85AF /* WebView.swift */; };
 		7445C665282BB459005A85AF /* mainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C664282BB459005A85AF /* mainTabView.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		742D6565282CB334000C81D7 /* ApplyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyButton.swift; sourceTree = "<group>"; };
 		7445C660282B9957005A85AF /* recruitLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recruitLink.swift; sourceTree = "<group>"; };
 		7445C662282BB375005A85AF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		7445C664282BB459005A85AF /* mainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				74CE3EA9282B6BDF00B0FF54 /* DdayRow.swift */,
 				74CE3EAE282B737800B0FF54 /* AddRecruitInfo.swift */,
 				7445C660282B9957005A85AF /* recruitLink.swift */,
+				742D6565282CB334000C81D7 /* ApplyButton.swift */,
 			);
 			path = "D-day";
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			files = (
 				7445C665282BB459005A85AF /* mainTabView.swift in Sources */,
 				7445C667282BB522005A85AF /* TodoList.swift in Sources */,
+				742D6566282CB334000C81D7 /* ApplyButton.swift in Sources */,
 				7445C661282B9957005A85AF /* recruitLink.swift in Sources */,
 				7445C663282BB375005A85AF /* WebView.swift in Sources */,
 				74CE3EB8282B86A000B0FF54 /* RecruitRealmManager.swift in Sources */,

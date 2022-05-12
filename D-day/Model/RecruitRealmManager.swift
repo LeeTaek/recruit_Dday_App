@@ -9,9 +9,9 @@ import Foundation
 import RealmSwift
 
 class RecruitRealmManager: Object, ObjectKeyIdentifiable {
-    @Persisted var date: String
+    @Persisted var date: String?
     @Persisted var name: String
-    @Persisted var day: String
+    @Persisted var day: String?
     @Persisted (primaryKey: true) var link: String
     @Persisted var Dday: Int
     @Persisted var apply: Bool = false
@@ -37,7 +37,7 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
         
         try! realm.write{
             realm.add(recruitInfo)
-        }
+        } 
     }
     
     
@@ -55,7 +55,7 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
     
     
     func getRecruit() -> Recruit {
-        Recruit(name: self.name, date: self.date, link: self.link, day: self.day, Dday: self.Dday)
+        Recruit(name: self.name, date: self.date!, link: self.link, day: self.day!, Dday: self.Dday)
     }
 
     
