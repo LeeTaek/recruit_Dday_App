@@ -27,6 +27,7 @@ struct Apply: View {
                 }.frame(width: 0)
                     .opacity(0)
             }
+            .animation(.easeInOut, value: recruitInfo.count)
             .frame(height: 120)
             .contextMenu {      // 컨텍스트 메뉴
                 HStack{

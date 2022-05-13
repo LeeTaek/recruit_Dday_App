@@ -37,7 +37,7 @@ struct Removed: View {
         }
         .listStyle(.plain)
         .background(Color.background)
-        .navigationTitle("Apply✔️")
+        .navigationTitle("removed 🗑")
         .navigationBarTitleDisplayMode(.inline)
 
     }

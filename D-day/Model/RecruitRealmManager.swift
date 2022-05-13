@@ -19,7 +19,6 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
 
     convenience init(recruit: Recruit) {
         self.init()
-        self.overDeadline()
 
         self.date = recruit.date
         self.name = recruit.name
@@ -67,6 +66,23 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
     }
     
     
+    //MARK: - 수정
+    func eduitSchedule(origin: Recruit, recruit: Recruit) {
+        let realm = try! Realm()
+        
+        let originData = realm.object(ofType: RecruitRealmManager.self, forPrimaryKey: origin.link)!
+        
+        try! realm.write{
+            originData.name = recruit.name
+            originData.Dday = recruit.countDday
+            originData.date = recruit.date
+            originData.day = recruit.day
+        }
+        
+        
+    }
+    
+    
     //MARK: - 현재값 반환
     func getRecruit() -> Recruit {
         Recruit(name: self.name, date: self.date ?? "지금시간", link: self.link, day: self.day ?? "불금", Dday: self.Dday ?? 800)
@@ -84,9 +100,6 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
         }
         
     }
-
-    
-    
     
     //MARK: - 채용기간 지난건 제거
     func overDeadline() {
@@ -99,6 +112,7 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
             removeSchedule(recruit: $0.getRecruit())
         }
     }
+    
     
     
 }

@@ -1,35 +1,40 @@
 //
-//  AddRecruitInfo.swift
+//  EditRecruitInfo.swift
 //  D-day
 //
-//  Created by 이택성 on 2022/05/11.
+//  Created by 이택성 on 2022/05/13.
 //
+
 
 import SwiftUI
 
-struct AddRecruitInfo: View {
+struct EditRecruitInfo: View {
     
     @Binding var goToDday: Bool
-    
+    @State var rec: Recruit
     @State var name: String = ""
     @State var dday: Date = Date()
-    @State var link: String = ""
+    
     var updateInfo = RecruitRealmManager()
-    var edit: Bool = false
 
+    
+  
     
     
     var body: some View {
         Form {
+           Text("Link는 수정할 수 없습니다 😢")
+                .font(.footnote)
+                .foregroundColor(.textFiledColor)
+                .background(.background)
+            
             inputName
             
             inputDate
-            
-            inputLink
-            
-            addButton
+                        
+            editButton
         }
-            .navigationTitle("Add memo📌")
+            .navigationTitle("Eidt memo📌")
             .background(Color.background)
             .navigationBarTitleDisplayMode(.inline)
         
@@ -78,35 +83,14 @@ struct AddRecruitInfo: View {
     
     
     
-    //MARK: - 채용 링크 입력란
-    var inputLink: some View {
-        Section {
-            HStack {
-                TextField("Enter a link.", text: $link)
-                    .disableAutocorrection(true)
-                    .foregroundColor(.textFiledColor)
 
-                if self.link.count > 0 {
-                    Button(action: { self.link = "" }) {
-                        Image(systemName: "x.circle")
-                            .foregroundColor(.gray)
-                    }
-                }
-            }
-        } header: {
-            Text("LINK💻")
-                .foregroundColor(.textFiledColor)
-
-        }
-    }
-    
-    //MARK: - Add버튼
-    var addButton: some View {
+    //MARK: - Edit 버튼
+    var editButton: some View {
         Button(action: {
-            self.updateInfo.addSchedule(recruit: recruitInfo)
+            self.updateInfo.eduitSchedule(origin: rec, recruit: recruitInfo)
             goToDday = false
         }) {
-            Text("Add recruit Info")
+            Text("Edit recruit Info")
                 .fontWeight(.bold)
                 .foregroundColor(.cyan)
                 .frame(width: 350)
@@ -125,15 +109,8 @@ struct AddRecruitInfo: View {
         let day = dateFormatter.string(from: self.dday)
         let countDay = Int(self.dday.timeIntervalSinceNow / 86400)
         
-        return Recruit(name: self.name, date: date, link: self.link, day: day, Dday: countDay)
+        return Recruit(name: self.name, date: date, link: rec.link, day: day, Dday: countDay)
     }
   
     
 }
-
-//struct AddRecruitInfo_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddRecruitInfo(goToDday: $goToAddMemo)
-//    }
-//}
-
