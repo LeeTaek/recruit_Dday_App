@@ -43,11 +43,17 @@ struct Dday: View {
                 
             }
             .background(
+                
                 // 웹뷰
-                NavigationLink(destination: recruitLink(link: recruit.getRecruit().link )) {
+                
+                NavigationLink(destination: Web(webUrl: recruit.getRecruit().link)
+                
+                ) {
                     EmptyView()
                 }.frame(width: 0)
                     .opacity(0)
+                
+  
             )
             .contextMenu {      // 컨텍스트 메뉴
                
@@ -74,6 +80,11 @@ struct Dday: View {
         .navigationBarTitleDisplayMode(.inline)
 
     }
+    
+    
+    
+    
+    
 }
 
 

@@ -22,7 +22,7 @@ struct Apply: View {
             HStack {
                 DdayRow(recruit: recruit)
                 
-                NavigationLink(destination: recruitLink(link: recruit.getRecruit().link )) {
+                NavigationLink(destination: Webview(urlToLoad: recruit.getRecruit().link )) {
                     EmptyView()
                 }.frame(width: 0)
                     .opacity(0)

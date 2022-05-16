@@ -11,7 +11,6 @@
 		742D656A282D0714000C81D7 /* RemovedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D6569282D0714000C81D7 /* RemovedViewModel.swift */; };
 		742D656C282D116D000C81D7 /* Removed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D656B282D116D000C81D7 /* Removed.swift */; };
 		742D656E282D12F8000C81D7 /* removedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D656D282D12F8000C81D7 /* removedRow.swift */; };
-		7445C661282B9957005A85AF /* recruitLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C660282B9957005A85AF /* recruitLink.swift */; };
 		7445C663282BB375005A85AF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C662282BB375005A85AF /* WebView.swift */; };
 		7445C665282BB459005A85AF /* mainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C664282BB459005A85AF /* mainTabView.swift */; };
 		7445C667282BB522005A85AF /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C666282BB522005A85AF /* TodoList.swift */; };
@@ -33,11 +32,11 @@
 		742D6569282D0714000C81D7 /* RemovedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemovedViewModel.swift; sourceTree = "<group>"; };
 		742D656B282D116D000C81D7 /* Removed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Removed.swift; sourceTree = "<group>"; };
 		742D656D282D12F8000C81D7 /* removedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = removedRow.swift; sourceTree = "<group>"; };
-		7445C660282B9957005A85AF /* recruitLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recruitLink.swift; sourceTree = "<group>"; };
 		7445C662282BB375005A85AF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		7445C664282BB459005A85AF /* mainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabView.swift; sourceTree = "<group>"; };
 		7445C666282BB522005A85AF /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		7459937A282E06500074EA14 /* EditRecruitInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecruitInfo.swift; sourceTree = "<group>"; };
+		74BCB5D8282E44CC0062D9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		74CE3E96282B6B6600B0FF54 /* D-day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D-day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74CE3E99282B6B6600B0FF54 /* D_dayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_dayApp.swift; sourceTree = "<group>"; };
 		74CE3E9B282B6B6600B0FF54 /* Dday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dday.swift; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		74CE3E98282B6B6600B0FF54 /* D-day */ = {
 			isa = PBXGroup;
 			children = (
+				74BCB5D8282E44CC0062D9A2 /* Info.plist */,
 				74CE3EAB282B6C0B00B0FF54 /* Model */,
 				74CE3EA8282B6B9600B0FF54 /* TodoList */,
 				74CE3EA7282B6B8900B0FF54 /* D-day */,
@@ -107,7 +107,7 @@
 				74CE3E9B282B6B6600B0FF54 /* Dday.swift */,
 				74CE3EA9282B6BDF00B0FF54 /* DdayRow.swift */,
 				74CE3EAE282B737800B0FF54 /* AddRecruitInfo.swift */,
-				7445C660282B9957005A85AF /* recruitLink.swift */,
+				7445C662282BB375005A85AF /* WebView.swift */,
 				742D6567282D05E6000C81D7 /* Apply.swift */,
 				742D656B282D116D000C81D7 /* Removed.swift */,
 				742D656D282D12F8000C81D7 /* removedRow.swift */,
@@ -130,7 +130,6 @@
 				74CE3EAC282B6C2200B0FF54 /* Recruit.swift */,
 				74CE3EB7282B86A000B0FF54 /* RecruitRealmManager.swift */,
 				742D6569282D0714000C81D7 /* RemovedViewModel.swift */,
-				7445C662282BB375005A85AF /* WebView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,7 +213,6 @@
 				7459937B282E06500074EA14 /* EditRecruitInfo.swift in Sources */,
 				7445C665282BB459005A85AF /* mainTabView.swift in Sources */,
 				7445C667282BB522005A85AF /* TodoList.swift in Sources */,
-				7445C661282B9957005A85AF /* recruitLink.swift in Sources */,
 				7445C663282BB375005A85AF /* WebView.swift in Sources */,
 				74CE3EB8282B86A000B0FF54 /* RecruitRealmManager.swift in Sources */,
 				742D656E282D12F8000C81D7 /* removedRow.swift in Sources */,
@@ -358,6 +356,7 @@
 				DEVELOPMENT_TEAM = H4MSW7FUBB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "D-day/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -387,6 +386,7 @@
 				DEVELOPMENT_TEAM = H4MSW7FUBB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "D-day/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
