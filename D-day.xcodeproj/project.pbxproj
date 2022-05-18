@@ -15,6 +15,8 @@
 		7445C663282BB375005A85AF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C662282BB375005A85AF /* WebView.swift */; };
 		7445C665282BB459005A85AF /* mainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C664282BB459005A85AF /* mainTabView.swift */; };
 		7445C667282BB522005A85AF /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C666282BB522005A85AF /* TodoList.swift */; };
+		744AC0B12834BBA5000EFFA5 /* TodoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744AC0B02834BBA5000EFFA5 /* TodoRow.swift */; };
+		744AC0B32834CE9C000EFFA5 /* AddTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744AC0B22834CE9C000EFFA5 /* AddTodo.swift */; };
 		7459937B282E06500074EA14 /* EditRecruitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459937A282E06500074EA14 /* EditRecruitInfo.swift */; };
 		748B19222832344900B51316 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748B19212832344900B51316 /* Todo.swift */; };
 		74CE3E9A282B6B6600B0FF54 /* D_dayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3E99282B6B6600B0FF54 /* D_dayApp.swift */; };
@@ -38,6 +40,8 @@
 		7445C662282BB375005A85AF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		7445C664282BB459005A85AF /* mainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabView.swift; sourceTree = "<group>"; };
 		7445C666282BB522005A85AF /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
+		744AC0B02834BBA5000EFFA5 /* TodoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRow.swift; sourceTree = "<group>"; };
+		744AC0B22834CE9C000EFFA5 /* AddTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodo.swift; sourceTree = "<group>"; };
 		7459937A282E06500074EA14 /* EditRecruitInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecruitInfo.swift; sourceTree = "<group>"; };
 		748B19212832344900B51316 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		74BCB5D8282E44CC0062D9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				7445C666282BB522005A85AF /* TodoList.swift */,
+				744AC0B02834BBA5000EFFA5 /* TodoRow.swift */,
+				744AC0B22834CE9C000EFFA5 /* AddTodo.swift */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 			files = (
 				7459937B282E06500074EA14 /* EditRecruitInfo.swift in Sources */,
 				7445C665282BB459005A85AF /* mainTabView.swift in Sources */,
+				744AC0B12834BBA5000EFFA5 /* TodoRow.swift in Sources */,
 				7445C667282BB522005A85AF /* TodoList.swift in Sources */,
 				7445C663282BB375005A85AF /* WebView.swift in Sources */,
 				74CE3EB8282B86A000B0FF54 /* RecruitRealmManager.swift in Sources */,
@@ -226,6 +233,7 @@
 				742D656A282D0714000C81D7 /* RemovedViewModel.swift in Sources */,
 				74CE3EAA282B6BDF00B0FF54 /* DdayRow.swift in Sources */,
 				742D212E28324422003D989A /* TodoViewModel.swift in Sources */,
+				744AC0B32834CE9C000EFFA5 /* AddTodo.swift in Sources */,
 				74CE3EAD282B6C2200B0FF54 /* Recruit.swift in Sources */,
 				742D6568282D05E6000C81D7 /* Apply.swift in Sources */,
 				748B19222832344900B51316 /* Todo.swift in Sources */,

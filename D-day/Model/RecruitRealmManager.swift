@@ -90,10 +90,10 @@ class RecruitRealmManager: Object, ObjectKeyIdentifiable {
     
     
     //MARK: - 지원버튼
-    func toggleApply(site: String) {
+    func toggleApply() {
         let realm = try! Realm()
         
-        let update = realm.object(ofType: RecruitRealmManager.self, forPrimaryKey: site)!
+        let update = realm.object(ofType: RecruitRealmManager.self, forPrimaryKey: self.link)!
     
         try! realm.write{
             update.apply.toggle()

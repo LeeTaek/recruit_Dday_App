@@ -11,20 +11,20 @@ struct Todo {
     let date: Date
     let name: String
     let check: Bool
-    let importance: Int
+    let variety: String
     
     init() {
         self.date = Date.now
         self.name = "블로그 정리"
         self.check = false
-        self.importance = 2
+        self.variety = "personal"
     }
     
-    init(name: String, importance: Int) {
+    init(name: String, variety: String) {
         self.date = Date.now
         self.name = name
         self.check = false
-        self.importance = importance
+        self.variety = variety
     }
     
 }

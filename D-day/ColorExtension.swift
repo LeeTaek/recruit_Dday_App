@@ -18,6 +18,11 @@ extension Color {
     static let background = Color(hex: "F9EBC8")
     static let textFiledColor = Color(hex: "22577E")
     
+    static let studyCS = Color(hex: "333C83")
+    static let makeApp = Color(hex: "FDAF75")
+    static let applyRecruit = Color(hex: "F24A72")
+    static let etc = Color(hex: "EAEA7F")
+    
     init(hex: String) {
         let scanner = Scanner(string: hex)      //문자열 파서 역할하는 클래스
         _ = scanner.scanString("#")             // #문자 제거

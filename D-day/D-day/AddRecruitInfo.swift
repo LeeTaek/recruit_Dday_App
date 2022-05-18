@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct AddRecruitInfo: View {
-    
+    //Add버튼 누르면 Dday()로 가기위한 바인딩값
     @Binding var goToDday: Bool
     
     @State var name: String = ""
     @State var dday: Date = Date()
     @State var link: String = ""
     var updateInfo = RecruitRealmManager()
-    var edit: Bool = false
 
     
     
@@ -100,6 +99,7 @@ struct AddRecruitInfo: View {
         }
     }
     
+    
     //MARK: - Add버튼
     var addButton: some View {
         Button(action: {
@@ -115,7 +115,7 @@ struct AddRecruitInfo: View {
 
     
     
-    //MARK: - 받은 정보로 Recrui 타입으로 변환
+    //MARK: - 받은 정보로 Recruit 타입으로 변환
     var recruitInfo: Recruit {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.dd kk시" // Date 포맷 타입 지정

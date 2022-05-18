@@ -8,13 +8,14 @@
 import SwiftUI
 import RealmSwift
 
+
 struct DdayRow: View {
-    @ObservedRealmObject var recruit: RecruitRealmManager
+    @ObservedRealmObject var recruit: RecruitRealmManager       // Recruit ViewModel
 
     var body: some View {
         HStack {
             VStack{
-                Text("\(recruit.getRecruit().name)")
+                Text("\(recruit.name)")
                     .foregroundColor(.textFiledColor)
                     .font(.title2)
                     .fontWeight(.semibold)
@@ -24,9 +25,9 @@ struct DdayRow: View {
                 Spacer()
                 
                 HStack{
-                    Text("\(recruit.getRecruit().date!)")
+                    Text("\(recruit.date!)")
                     
-                    Text("\(recruit.getRecruit().day!)")
+                    Text("\(recruit.day!)")
                 }                    .foregroundColor(.textFiledColor)
                 .frame(width: 200 ,alignment: .leading)
                 .padding(.bottom, 25)
@@ -36,7 +37,7 @@ struct DdayRow: View {
             Spacer()
             
             VStack {
-                Text("D - \(recruit.getRecruit().countDday)🔥")
+                Text("D - \(recruit.Dday!)🔥")
                     .foregroundColor(.textFiledColor)
                     .fontWeight(.medium)
                     .frame(width: 100, alignment: .trailing)
@@ -76,13 +77,12 @@ struct DdayRow: View {
     
     
     var apply: some View {
-        
         Text("Apply : \(recruit.apply.description)")
              .foregroundColor(.textFiledColor)
              .frame(width: 100, alignment: .trailing)
              .padding(.bottom, 25)
              .onTapGesture {
-                 recruit.toggleApply(site: recruit.getRecruit().link)
+                 recruit.toggleApply()
              }
         
     }

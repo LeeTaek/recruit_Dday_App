@@ -12,7 +12,7 @@ class TodoViewModel: Object, ObjectKeyIdentifiable {
     @Persisted var date: Date
     @Persisted (primaryKey: true) var name: String
     @Persisted var check: Bool = false
-    @Persisted var importance: Int
+    @Persisted var variety: String
     
     
     convenience init(todo: Todo) {
@@ -21,7 +21,7 @@ class TodoViewModel: Object, ObjectKeyIdentifiable {
         self.date = todo.date
         self.name = todo.name
         self.check = false
-        self.importance = todo.importance
+        self.variety = todo.variety
     }
     
     
@@ -61,6 +61,18 @@ class TodoViewModel: Object, ObjectKeyIdentifiable {
         let realm = try! Realm()
         
         let toggleTodo = realm.object(ofType: TodoViewModel.self, forPrimaryKey: todo.name)!
+        
+        try! realm.write{
+            toggleTodo.check.toggle()
+        }
+    }
+    
+    
+    
+    func toggleTodo() {
+        let realm = try! Realm()
+        
+        let toggleTodo = realm.object(ofType: TodoViewModel.self, forPrimaryKey: self.name)!
         
         try! realm.write{
             toggleTodo.check.toggle()
