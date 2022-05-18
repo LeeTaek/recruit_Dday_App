@@ -26,10 +26,7 @@ struct Webview: UIViewRepresentable {
 
         // 웹뷰를 로드한다.
         webview.load(URLRequest(url: url))
-        
-        
         return webview
-        
     }
 
     // 뒤로가기
@@ -39,6 +36,7 @@ struct Webview: UIViewRepresentable {
         }
     }
 
+    
     // 앞으로 가기
     func goForward(){
         if webview.canGoForward {
@@ -67,6 +65,7 @@ struct Web: View {
         self.webview = Webview(urlToLoad: self.webUrl)
     }
     
+    
     var body: some View {
         self.webview
             .navigationTitle("WebView 💻")
@@ -85,11 +84,17 @@ struct Web: View {
                                     Image(systemName: "chevron.forward")
                                 }
                         
-                    
+                        Button(action: {
+                            if UIApplication.shared.canOpenURL(self.webview.webview.url!) {
+                                    UIApplication.shared.open(self.webview.webview.url!)
+                                }
+                            }){
+                                    Image(systemName: "safari")
+                                }
                     }
                     
-                }
             }
+        }
     }
     
 }
@@ -97,6 +102,6 @@ struct Web: View {
 
 struct Webview_Previews: PreviewProvider {
     static var previews: some View {
-        Webview(urlToLoad: "https://www.naver.com")
+        Web(webUrl: "https:www.naver.com")
     }
 }

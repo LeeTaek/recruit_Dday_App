@@ -15,7 +15,6 @@ struct mainTabView: View {
     @State private var selectedTab: Tabs = .recruit
 
     var body: some View {
-//        NavigationView {
             TabView(selection: $selectedTab) {
                 Group{
                     Dday()
@@ -41,14 +40,7 @@ struct mainTabView: View {
                 UINavigationBar.appearance().tintColor = .init(Color.textFiledColor)
             }
 
-//        }
-//        .navigationViewStyle(.stack)
-//
-//
     }
-    
-    
-
 
 }
 

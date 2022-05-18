@@ -36,7 +36,11 @@ struct Dday: View {
             
                         }
                     }
+        }.onAppear(){
+            UINavigationBar.appearance().tintColor = .init(Color.textFiledColor)
         }
+        .navigationViewStyle(.stack)
+        
       
     }
     
@@ -71,7 +75,9 @@ struct Dday: View {
                 DdayRow(recruit: recruit)
                 
                 // edit 뷰
-                NavigationLink(destination: EditRecruitInfo(goToDday: $goToEdit, rec: recruit.getRecruit(), name: recruit.getRecruit().name), isActive: $goToEdit){
+                NavigationLink(destination: EditRecruitInfo(goToDday: $goToEdit, rec: recruit.getRecruit(), name: recruit.getRecruit().name)
+                    .setTabBarVisibility(isHidden: true)
+                               , isActive: $goToEdit){
                     EmptyView()
                 }.frame(width: 0)
                     .opacity(0)
@@ -80,7 +86,6 @@ struct Dday: View {
             .background(
                 
                 // 웹뷰
-                
                 NavigationLink(destination: Web(webUrl: recruit.getRecruit().link)
                     .background(Color.background)
 
