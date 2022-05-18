@@ -27,29 +27,36 @@ struct Dday: View {
     
     
     var body: some View {
-        recruitList
-            .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        recruitToolBarItem
-        
+        NavigationView {
+            recruitList
+                .setTabBarVisibility(isHidden: false)
+                .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            recruitToolBarItem
+            
+                        }
                     }
-                }
+        }
+      
     }
     
     
     var recruitToolBarItem: some View {
         HStack {
-            NavigationLink(destination: Apply()) {
+            NavigationLink(destination: Apply()
+                .setTabBarVisibility(isHidden: true)) {
                 Image(systemName: "text.badge.plus")
                     .foregroundColor(.navigationItem)
             }
             
-            NavigationLink(destination: Removed()) {
+            NavigationLink(destination: Removed()
+                .setTabBarVisibility(isHidden: true)) {
                 Image(systemName: "trash")
                     .foregroundColor(.navigationItem)
             }
             
-            NavigationLink(destination: AddRecruitInfo(goToDday: $goToAddMemo), isActive: $goToAddMemo) {
+            NavigationLink(destination: AddRecruitInfo(goToDday: $goToAddMemo)
+                .setTabBarVisibility(isHidden: true), isActive: $goToAddMemo) {
                 Image(systemName: "plus")
                     .foregroundColor(.navigationItem)
             }
