@@ -121,7 +121,7 @@ struct AddRecruitInfo: View {
         dateFormatter.dateFormat = "MM.dd kk시" // Date 포맷 타입 지정
         let date = dateFormatter.string(from: self.dday)
         
-        dateFormatter.dateFormat = "E요일"
+        dateFormatter.dateFormat = "E"
         let day = dateFormatter.string(from: self.dday)
         let countDay = Int(self.dday.timeIntervalSinceNow / 86400)
         

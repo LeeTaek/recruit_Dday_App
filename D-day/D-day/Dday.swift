@@ -11,6 +11,7 @@ import RealmSwift
 struct Dday: View {
     @ObservedResults(RecruitRealmManager.self) var recruitInfo
     @State var goToEdit = false
+    @State var goToAddMemo = false
 
     
     init() {
@@ -24,8 +25,35 @@ struct Dday: View {
     }
     
     
+    
     var body: some View {
         recruitList
+            .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        recruitToolBarItem
+        
+                    }
+                }
+    }
+    
+    
+    var recruitToolBarItem: some View {
+        HStack {
+            NavigationLink(destination: Apply()) {
+                Image(systemName: "text.badge.plus")
+                    .foregroundColor(.navigationItem)
+            }
+            
+            NavigationLink(destination: Removed()) {
+                Image(systemName: "trash")
+                    .foregroundColor(.navigationItem)
+            }
+            
+            NavigationLink(destination: AddRecruitInfo(goToDday: $goToAddMemo), isActive: $goToAddMemo) {
+                Image(systemName: "plus")
+                    .foregroundColor(.navigationItem)
+            }
+        }
     }
     
     
@@ -47,7 +75,8 @@ struct Dday: View {
                 // 웹뷰
                 
                 NavigationLink(destination: Web(webUrl: recruit.getRecruit().link)
-                
+                    .background(Color.background)
+
                 ) {
                     EmptyView()
                 }.frame(width: 0)

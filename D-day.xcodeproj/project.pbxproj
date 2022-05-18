@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		742D212E28324422003D989A /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D212D28324422003D989A /* TodoViewModel.swift */; };
 		742D6568282D05E6000C81D7 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D6567282D05E6000C81D7 /* Apply.swift */; };
 		742D656A282D0714000C81D7 /* RemovedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D6569282D0714000C81D7 /* RemovedViewModel.swift */; };
 		742D656C282D116D000C81D7 /* Removed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D656B282D116D000C81D7 /* Removed.swift */; };
@@ -15,6 +16,7 @@
 		7445C665282BB459005A85AF /* mainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C664282BB459005A85AF /* mainTabView.swift */; };
 		7445C667282BB522005A85AF /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C666282BB522005A85AF /* TodoList.swift */; };
 		7459937B282E06500074EA14 /* EditRecruitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459937A282E06500074EA14 /* EditRecruitInfo.swift */; };
+		748B19222832344900B51316 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748B19212832344900B51316 /* Todo.swift */; };
 		74CE3E9A282B6B6600B0FF54 /* D_dayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3E99282B6B6600B0FF54 /* D_dayApp.swift */; };
 		74CE3E9C282B6B6600B0FF54 /* Dday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3E9B282B6B6600B0FF54 /* Dday.swift */; };
 		74CE3E9E282B6B6700B0FF54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CE3E9D282B6B6700B0FF54 /* Assets.xcassets */; };
@@ -28,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		742D212D28324422003D989A /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		742D6567282D05E6000C81D7 /* Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		742D6569282D0714000C81D7 /* RemovedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemovedViewModel.swift; sourceTree = "<group>"; };
 		742D656B282D116D000C81D7 /* Removed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Removed.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		7445C664282BB459005A85AF /* mainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabView.swift; sourceTree = "<group>"; };
 		7445C666282BB522005A85AF /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		7459937A282E06500074EA14 /* EditRecruitInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecruitInfo.swift; sourceTree = "<group>"; };
+		748B19212832344900B51316 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		74BCB5D8282E44CC0062D9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		74CE3E96282B6B6600B0FF54 /* D-day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D-day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74CE3E99282B6B6600B0FF54 /* D_dayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_dayApp.swift; sourceTree = "<group>"; };
@@ -128,8 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				74CE3EAC282B6C2200B0FF54 /* Recruit.swift */,
+				748B19212832344900B51316 /* Todo.swift */,
 				74CE3EB7282B86A000B0FF54 /* RecruitRealmManager.swift */,
 				742D6569282D0714000C81D7 /* RemovedViewModel.swift */,
+				742D212D28324422003D989A /* TodoViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,8 +225,10 @@
 				74CE3EAF282B737800B0FF54 /* AddRecruitInfo.swift in Sources */,
 				742D656A282D0714000C81D7 /* RemovedViewModel.swift in Sources */,
 				74CE3EAA282B6BDF00B0FF54 /* DdayRow.swift in Sources */,
+				742D212E28324422003D989A /* TodoViewModel.swift in Sources */,
 				74CE3EAD282B6C2200B0FF54 /* Recruit.swift in Sources */,
 				742D6568282D05E6000C81D7 /* Apply.swift in Sources */,
+				748B19222832344900B51316 /* Todo.swift in Sources */,
 				742D656C282D116D000C81D7 /* Removed.swift in Sources */,
 				74CE3EB1282B813700B0FF54 /* ColorExtension.swift in Sources */,
 				74CE3E9C282B6B6600B0FF54 /* Dday.swift in Sources */,

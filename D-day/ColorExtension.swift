@@ -13,9 +13,9 @@ extension Color {
     static let day1 = Color(hex: "FF8080")
     static let day2 = Color(hex: "FFF7BC")
     static let day = Color(hex: "C0EDA6")
-    static let background = Color(hex: "FEFBE7")
+    static let tabColor = Color(hex: "FEFBE7")
     static let navigationItem = Color(hex: "A0BCC2")
-    static let tabColor = Color(hex: "F9EBC8")
+    static let background = Color(hex: "F9EBC8")
     static let textFiledColor = Color(hex: "22577E")
     
     init(hex: String) {

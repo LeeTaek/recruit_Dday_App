@@ -13,7 +13,6 @@ struct mainTabView: View {
     }
 
     @State private var selectedTab: Tabs = .recruit
-    @State var goToAddMemo = false
 
     var body: some View {
         NavigationView {
@@ -25,8 +24,6 @@ struct mainTabView: View {
                             Text("recruit❗️")
                         }
                   
-                    
-
                     TodoList()
                         .tag(Tabs.TodoList)
                         .tabItem {
@@ -35,41 +32,27 @@ struct mainTabView: View {
                     
                 }
             }
-            .foregroundColor(Color.tabColor)
-            .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        HStack {
-                            NavigationLink(destination: Apply()) {
-                                Image(systemName: "text.badge.plus")
-                                    .foregroundColor(.navigationItem)
-                            }
-                            
-                            NavigationLink(destination: Removed()) {
-                                Image(systemName: "trash")
-                                    .foregroundColor(.navigationItem)
-                            }
-                            
-                            NavigationLink(destination: AddRecruitInfo(goToDday: $goToAddMemo), isActive: $goToAddMemo) {
-                                Image(systemName: "plus")
-                                    .foregroundColor(.navigationItem)
-                            }
-                        }
-                        
-                       
-                    }
+            .onAppear() {
+                UITabBar.appearance().backgroundColor = .init(Color.tabColor)
+                UITabBar.appearance().shadowImage = UIImage()
+                UITabBar.appearance().unselectedItemTintColor = .init(Color.textFiledColor)
                 
-                
-                
-                
-                }
+
+                UINavigationBar.appearance().tintColor = .init(Color.textFiledColor)
             }
+
+        }
         .navigationViewStyle(.stack)
 
         
     }
     
     
+    
 
+    
+    
+    
     
   
 }
