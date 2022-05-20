@@ -14,7 +14,7 @@ struct Recruit {
     let countDday: Int
     let apply: Bool
     
-    init() {
+    init() {            // Preview 보기 위한 Recruit 예
         self.date = "Date.now"
         self.day = "수요일"
         self.name = "주식회사 택꽁"
@@ -23,7 +23,7 @@ struct Recruit {
         self.apply = false
     }
     
-    init(name: String, date: String, link: String, day: String, Dday: Int) {
+    init(name: String, date: String, link: String, day: String, Dday: Int) {        
 
         self.date = date
         self.name = name

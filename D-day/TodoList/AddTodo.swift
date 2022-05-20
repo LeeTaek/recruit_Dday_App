@@ -43,7 +43,7 @@ struct AddTodo: View {
                     .disableAutocorrection(true)
                     .foregroundColor(.textFiledColor)
                 
-                
+
                 if self.name.count > 0 {
                     Button(action: { self.name = "" }) {
                         Image(systemName: "x.circle")
@@ -91,21 +91,16 @@ struct AddTodo: View {
         }
     }
     
-    
-   
-    
 
-    
-    
     //MARK: - 받은 정보로 Todo 타입으로 변환
     var todoInfo: Todo {
         Todo(name: self.name, variety: self.variety)
     }
 }
 
-//
+
 //struct AddTodo_Previews: PreviewProvider {
 //    static var previews: some View {
-//        AddTodo()
+//        AddTodo(goToDoList: $goToDoList)
 //    }
 //}

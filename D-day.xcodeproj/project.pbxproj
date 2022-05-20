@@ -17,6 +17,7 @@
 		7445C667282BB522005A85AF /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C666282BB522005A85AF /* TodoList.swift */; };
 		744AC0B12834BBA5000EFFA5 /* TodoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744AC0B02834BBA5000EFFA5 /* TodoRow.swift */; };
 		744AC0B32834CE9C000EFFA5 /* AddTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744AC0B22834CE9C000EFFA5 /* AddTodo.swift */; };
+		744AC0B52834DF7B000EFFA5 /* TodoDateScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744AC0B42834DF7B000EFFA5 /* TodoDateScrollView.swift */; };
 		7459937B282E06500074EA14 /* EditRecruitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459937A282E06500074EA14 /* EditRecruitInfo.swift */; };
 		748B19222832344900B51316 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748B19212832344900B51316 /* Todo.swift */; };
 		74CE3E9A282B6B6600B0FF54 /* D_dayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3E99282B6B6600B0FF54 /* D_dayApp.swift */; };
@@ -28,7 +29,7 @@
 		74CE3EAF282B737800B0FF54 /* AddRecruitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3EAE282B737800B0FF54 /* AddRecruitInfo.swift */; };
 		74CE3EB1282B813700B0FF54 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3EB0282B813700B0FF54 /* ColorExtension.swift */; };
 		74CE3EB4282B84B100B0FF54 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 74CE3EB3282B84B100B0FF54 /* RealmSwift */; };
-		74CE3EB8282B86A000B0FF54 /* RecruitRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3EB7282B86A000B0FF54 /* RecruitRealmManager.swift */; };
+		74CE3EB8282B86A000B0FF54 /* RecruitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE3EB7282B86A000B0FF54 /* RecruitViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		7445C666282BB522005A85AF /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		744AC0B02834BBA5000EFFA5 /* TodoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRow.swift; sourceTree = "<group>"; };
 		744AC0B22834CE9C000EFFA5 /* AddTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodo.swift; sourceTree = "<group>"; };
+		744AC0B42834DF7B000EFFA5 /* TodoDateScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDateScrollView.swift; sourceTree = "<group>"; };
 		7459937A282E06500074EA14 /* EditRecruitInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecruitInfo.swift; sourceTree = "<group>"; };
 		748B19212832344900B51316 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		74BCB5D8282E44CC0062D9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 		74CE3EAC282B6C2200B0FF54 /* Recruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruit.swift; sourceTree = "<group>"; };
 		74CE3EAE282B737800B0FF54 /* AddRecruitInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecruitInfo.swift; sourceTree = "<group>"; };
 		74CE3EB0282B813700B0FF54 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		74CE3EB7282B86A000B0FF54 /* RecruitRealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitRealmManager.swift; sourceTree = "<group>"; };
+		74CE3EB7282B86A000B0FF54 /* RecruitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				7445C666282BB522005A85AF /* TodoList.swift */,
 				744AC0B02834BBA5000EFFA5 /* TodoRow.swift */,
 				744AC0B22834CE9C000EFFA5 /* AddTodo.swift */,
+				744AC0B42834DF7B000EFFA5 /* TodoDateScrollView.swift */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -139,7 +142,7 @@
 			children = (
 				74CE3EAC282B6C2200B0FF54 /* Recruit.swift */,
 				748B19212832344900B51316 /* Todo.swift */,
-				74CE3EB7282B86A000B0FF54 /* RecruitRealmManager.swift */,
+				74CE3EB7282B86A000B0FF54 /* RecruitViewModel.swift */,
 				742D6569282D0714000C81D7 /* RemovedViewModel.swift */,
 				742D212D28324422003D989A /* TodoViewModel.swift */,
 			);
@@ -227,7 +230,8 @@
 				744AC0B12834BBA5000EFFA5 /* TodoRow.swift in Sources */,
 				7445C667282BB522005A85AF /* TodoList.swift in Sources */,
 				7445C663282BB375005A85AF /* WebView.swift in Sources */,
-				74CE3EB8282B86A000B0FF54 /* RecruitRealmManager.swift in Sources */,
+				744AC0B52834DF7B000EFFA5 /* TodoDateScrollView.swift in Sources */,
+				74CE3EB8282B86A000B0FF54 /* RecruitViewModel.swift in Sources */,
 				742D656E282D12F8000C81D7 /* removedRow.swift in Sources */,
 				74CE3EAF282B737800B0FF54 /* AddRecruitInfo.swift in Sources */,
 				742D656A282D0714000C81D7 /* RemovedViewModel.swift in Sources */,

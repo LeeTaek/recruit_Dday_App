@@ -8,6 +8,11 @@
 import Foundation
 import RealmSwift
 
+/*
+    Todo를 관리하기 위한 ViewModel
+ */
+
+
 class TodoViewModel: Object, ObjectKeyIdentifiable {
     @Persisted var date: Date
     @Persisted (primaryKey: true) var name: String
@@ -54,21 +59,9 @@ class TodoViewModel: Object, ObjectKeyIdentifiable {
         }
     }
    
-    
+
     
     //MARK: - 완료
-    func toggleTodo(todo: Todo) {
-        let realm = try! Realm()
-        
-        let toggleTodo = realm.object(ofType: TodoViewModel.self, forPrimaryKey: todo.name)!
-        
-        try! realm.write{
-            toggleTodo.check.toggle()
-        }
-    }
-    
-    
-    
     func toggleTodo() {
         let realm = try! Realm()
         

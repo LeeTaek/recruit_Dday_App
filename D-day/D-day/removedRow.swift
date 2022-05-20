@@ -9,6 +9,11 @@
 import SwiftUI
 import RealmSwift
 
+/*
+    RealmDB의 RemoedViewModel의 값을 그려주기 위한 View
+    남은 채용 마감 D-day에 따라 배경 색을 다르게 그려준다.
+ */
+
 struct removeRow: View {
     @ObservedRealmObject var recruit: RemovedViewModel
 

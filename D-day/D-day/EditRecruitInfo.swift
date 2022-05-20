@@ -5,21 +5,22 @@
 //  Created by 이택성 on 2022/05/13.
 //
 
-
 import SwiftUI
+
+/*
+    RealmDB의 RecruitViewModel의 값을 수정하기 위한 View
+    Link를 Key값으로 사용하여 link값은 변경 못한다.
+ */
+
 
 struct EditRecruitInfo: View {
     
-    @Binding var goToDday: Bool
-    @State var rec: Recruit
-    @State var name: String = ""
-    @State var dday: Date = Date()
+    @Binding var goToDday: Bool                 // Edit 버튼 누르면 Dday()로 가기위한 바인딩값
+    @State var rec: Recruit                     // 수정할 채용 공고의 Recruit모델
+    @State var name: String = ""                // TextFiled를 수정할 기업 이름을 받을 변수
+    @State var dday: Date = Date()              // DatePicker를 통해 수정할 채용 마감 날짜를 받을 변수.
     
-    var updateInfo = RecruitRealmManager()
-
-    
-  
-    
+    var updateInfo = RecruitViewModel()         // 수정할 내용을 저장할 ViewModel
     
     var body: some View {
         Form {
@@ -41,7 +42,8 @@ struct EditRecruitInfo: View {
     }
     
     
-    //MARK: - 기업 이름 입력란
+    
+    //MARK: - 기업 이름 입력, 초기값으로 수정할 기업 이름이 들어옴.
     var inputName: some View {
         Section {
             HStack {
@@ -66,7 +68,7 @@ struct EditRecruitInfo: View {
     
     
     
-    //MARK: - 날짜 입력란
+    //MARK: - 날짜 입력란, 초기값으로 수정할 채용 마감 날짜가 들어옴.
     var inputDate: some View {
         Section {
             DatePicker(selection: $dday, in: Date()...) {
@@ -81,10 +83,7 @@ struct EditRecruitInfo: View {
         }
     }
     
-    
-    
-
-    //MARK: - Edit 버튼
+        //MARK: - Edit 버튼
     var editButton: some View {
         Button(action: {
             self.updateInfo.eduitSchedule(origin: rec, recruit: recruitInfo)

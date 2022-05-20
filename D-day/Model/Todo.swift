@@ -13,7 +13,7 @@ struct Todo {
     let check: Bool
     let variety: String
     
-    init() {
+    init() {             // Preview 보기 위한 Todo 예
         self.date = Date.now
         self.name = "블로그 정리"
         self.check = false

@@ -7,25 +7,27 @@
 import WebKit
 import SwiftUI
 
+/*
+    채용 공고 링크를 보기 위한 WebView
+    bug : redirect 되는 몇몇 웹이 안뜸. 때문에 해당 주소를 정확하게 입력해야함.
+    ex) https://www.google.com/ 은 뜨지만 google.com은 안뜬다.
+ */
 
 struct Webview: UIViewRepresentable {
    
-    var urlToLoad: String
-    let webview = WKWebView()
+    var urlToLoad: String                       // url 을 저장할 변수.
+    let webview = WKWebView()                   // webview 변수
 
     // ui view 만들기
     func makeUIView(context: Context) -> WKWebView {
-        
-        // 한글 url 핸들링할 수 있도록 인코딩
-        let encodedStr = urlToLoad.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        
-        // 언래핑
-        guard let url = URL(string: encodedStr) else {
+        let encodedStr = urlToLoad.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!              // 한글 url 핸들링할 수 있도록 인코딩
+
+        guard let url = URL(string: encodedStr) else {                               // url 언래핑
             return WKWebView()
         }
 
-        // 웹뷰를 로드한다.
-        webview.load(URLRequest(url: url))
+        webview.load(URLRequest(url: url))                          // 웹뷰를 로드한다.
+
         return webview
     }
 
@@ -53,14 +55,11 @@ struct Webview: UIViewRepresentable {
 }
 
 
-
-
-struct Web: View {
-    
+struct Web: View {                      // 네비게이션에서 webView를 그리기 위한 view
     let webUrl: String
     let webview: Webview
     
-    init(webUrl: String) {
+    init(webUrl: String) {              // 입력받은 url로 초기화
         self.webUrl = webUrl
         self.webview = Webview(urlToLoad: self.webUrl)
     }
@@ -72,19 +71,19 @@ struct Web: View {
             .toolbar{
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack {
-                        Button(action: {
+                        Button(action: {                            // 뒤로 가기 버튼
                             self.webview.goBack()
                                   }){
                                       Image(systemName: "chevron.backward")
                                   }
                         
-                        Button(action: {
+                        Button(action: {                           // 앞으로 가기 버튼
                                     self.webview.goForward()
                                 }){
                                     Image(systemName: "chevron.forward")
                                 }
                         
-                        Button(action: {
+                        Button(action: {                           // Safari에서 웹 보기 버튼
                             if UIApplication.shared.canOpenURL(self.webview.webview.url!) {
                                     UIApplication.shared.open(self.webview.webview.url!)
                                 }
